@@ -114,6 +114,10 @@ impl DiceGameMatch {
                 }
             }
         }
+
+        let mut remaining_player = self.players.borrow_mut();
+        self.winner = Some(self.players.borrow_mut().iter().next().unwrap().clone());
+        remaining_player.clear();
     }
 }
 
